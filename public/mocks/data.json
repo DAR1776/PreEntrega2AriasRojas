@@ -1,5 +1,5 @@
 [
-    {"nombre": "Long Live The King", "categoria":"Hoodies blancos" , "precio":40 , "id":1 , "unidadesDisponibles":35 , "imagen":"../images/image_1.png" },
-    {"nombre": "Revolution MMXXIII", "categoria":"Hoodies negros" , "precio":55 , "id":2 , "unidadesDisponibles":20 , "imagen":"../images/image_2.png" },
-    {"nombre": "Goddess Revolution", "categoria":"Hoodies grises" , "precio":45 , "id":3 , "unidadesDisponibles":55 , "imagen":"../images/image_3.png" }
+    {"nombre": "Long Live The King", "categoria": 1 , "precio":40 , "id":1 , "unidadesDisponibles":35 , "imagen":"../images/image_1.png" },
+    {"nombre": "Revolution MMXXIII", "categoria": 2 , "precio":55 , "id":2 , "unidadesDisponibles":20 , "imagen":"../images/image_2.png" },
+    {"nombre": "Goddess Revolution", "categoria": 3 , "precio":45 , "id":3 , "unidadesDisponibles":55 , "imagen":"../images/image_3.png" }
 ]

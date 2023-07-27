@@ -1,5 +1,4 @@
 import{BrowserRouter, Routes, Route} from "react-router-dom";
-import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NavbarContainer from "./components/Navbar Container";
@@ -9,10 +8,11 @@ import HoodiesBlancos from "./pages/Blancos";
 import Footer from "./components/Footer";
 
 function App() {
+
   return (
     <BrowserRouter>
 
-      <NavbarContainer/>
+      <NavbarContainer />
 
       <Routes>
 
@@ -24,20 +24,26 @@ function App() {
 
         <Route
           exact
-          path="grises"
+          path="category/1"
           element={<HoodiesGrises/>}
         />
 
         <Route
           exact
-          path="negros"
+          path="category/2"
           element={<HoodiesNegros/>}
         />
 
         <Route
           exact
-          path="blancos"
+          path="category/3"
           element={<HoodiesBlancos/>}
+        />
+
+        <Route
+          exact
+          path="item/:id"
+          element={<Detail/>}
         />
 
       </Routes>

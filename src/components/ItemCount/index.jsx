@@ -1,7 +1,9 @@
-const ItemCount = () => {
+
+const ItemCount = (props) => {
+
     return(
         <>
-
+            <h3>{props.item}</h3>
         </>
     )
 }

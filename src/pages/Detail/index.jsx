@@ -1,6 +1,8 @@
+import ItemDetailContainer from "../../components/ItemDetailContainer"
+
 function Detail (){
     return(
-        <h1>Soy la pagina Detail</h1>
+        <ItemDetailContainer/>      
     )
 }
 

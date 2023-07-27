@@ -7,12 +7,6 @@ import CartWidget from "../CartWidget"
 
 const NavbarContainer = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
-    useEffect(() => {
-        const newData = items.filter((item)=> {
-            return item.name === selectedCategory
-        })
-        
-    }, [selectedCategory])
 
     return(
         <div id="navbar">
@@ -21,15 +15,15 @@ const NavbarContainer = () => {
                 <Brand/>
             </Link>
 
-            <Link to="/grises">
+            <Link to={`/category/1`}>
                 <Categories name = "Hoodies Grises" onClick={setSelectedCategory}/>
             </Link>
 
-            <Link to="/blancos">
+            <Link to={`/category/2`}>
                 <Categories name = "Hoodies Blancos" onClick={setSelectedCategory}/>
             </Link>
 
-            <Link to="/negros">
+            <Link to={`/category/3`}>
                 <Categories name = "Hoodies Negros" onClick={setSelectedCategory}/>
             </Link>
 

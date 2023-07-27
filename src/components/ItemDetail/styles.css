@@ -1,0 +1,30 @@
+#itemDetail{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-align: center;
+    background-color: #f3f3f1;
+    margin: 10%;
+}
+
+#itemDetail img{
+    width: 80%;
+}
+
+#itemDetail h2, p{
+    margin:15px
+}
+
+#itemCount{
+    display: flex;
+    justify-content: center;
+    margin:20px ;
+}
+
+#itemCount button{
+    margin: 15px;
+    padding: 0 20px 0 20px;
+    font-size: large;
+    background-color: #2F3434;
+    color: #d6d5d5;
+}
