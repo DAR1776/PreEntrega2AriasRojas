@@ -3,7 +3,6 @@ import "./styles.css"
 const Categories = (props) => {
 
     const onClickCategory = (name) => {
-        console.log(name)
         props.onClick(name)
     }
 

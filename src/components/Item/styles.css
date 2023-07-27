@@ -24,3 +24,10 @@ img:hover{
 #itemName{
     margin: 0;
 }
+
+.itemContainer h4{
+    color: #181818;
+    border: solid 1px #181818;
+    padding: 10px;
+    
+}

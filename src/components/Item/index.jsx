@@ -9,7 +9,7 @@ function Item (props) {
             <Link to={`/item/${props.item.id}`}> 
                 <h4>Ver item</h4>
             </Link>
-            <h4>Stock: {props.item.unidadesDisponibles}</h4>
+            <h3>Stock: {props.item.unidadesDisponibles}</h3>
         </div>
     )
 }
