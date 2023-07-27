@@ -5,23 +5,17 @@ import { useParams } from "react-router-dom";
 
 function ItemDetail () {
     const {id} = useParams()
-    console.log("id:", id)
-
-    const [item, setItem] = useState(null)
+    const[items, setItems] = useState([])
+    const [itemCount, setItemCount] = useState(0);
 
     useEffect(() => {
-        fetch (`../../mocks/data.json`)
-        .then((response) => {
-            return response.json()
-          })
-        .then((data) => {
-            const selectedItem = data.find((item) => item.id == id);
-            setItem(selectedItem)
-            console.log(item)
-        })
-    }, [id])
-
-    const [itemCount,setItemCount] = useState(0)
+        fetch(`../../mocks/data.json`)
+          .then((response) => response.json())
+          .then((data) => {
+            const foundItem = data.find((item) => item.id === parseInt(id));
+            setItems(foundItem);
+          });
+      }, [id]);
 
     const increment = () => {
         setItemCount(itemCount + 1);
@@ -37,10 +31,10 @@ function ItemDetail () {
     return(
         <div>
             <div id= "itemDetail">
-                <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="manzana" />
-                <h2>Nombre</h2>
+                <img src={items.imagen} alt={items.nombre}/>
+                <h2>{items.nombre}</h2>
                 <p>Descripcion</p>
-                <p>Precio: 35$</p>
+                <p> Precio: {items.precio}$</p>
                 <div id= "itemCount">
                     <button onClick={increment}>+</button>
                     <ItemCount item={itemCount}/>
