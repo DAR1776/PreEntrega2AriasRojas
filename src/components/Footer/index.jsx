@@ -5,7 +5,7 @@ const Footer = () => {
     return(
         <div id="footerContainer">
 
-            <div>
+            <div id="footerInfo">
                 <h3>Redes Sociales:</h3>
                 <h4>Whatsapp: +506 7068-2564</h4>
                 <h4>Correo: info@arstore.com</h4>

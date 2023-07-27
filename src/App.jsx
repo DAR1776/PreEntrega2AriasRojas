@@ -9,28 +9,10 @@ import HoodiesBlancos from "./pages/Blancos";
 import Footer from "./components/Footer";
 
 function App() {
-
-  const[items, setItems] = useState([])
-
-  useEffect(() => {
-    fetch('./mock/data')
-      .then((response) => {
-        console.log("RESONSE SIN PROCESAR: ", response)
-        return response.json()
-      })
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) =>{
-        console.log(error)
-      })
-  }, []);
-
   return (
     <BrowserRouter>
 
       <NavbarContainer/>
-
 
       <Routes>
 

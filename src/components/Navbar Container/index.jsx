@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react";
 import "./styles.css"
 import Brand from "../Brand"
 import Categories from "../Categories"
 import CartWidget from "../CartWidget"
 
 const NavbarContainer = () => {
-
-    function clic (){
-        console.log("Clic")
-    }
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    useEffect(() => {
+        const newData = items.filter((item)=> {
+            return item.name === selectedCategory
+        })
+        
+    }, [selectedCategory])
 
     return(
         <div id="navbar">
@@ -18,19 +22,19 @@ const NavbarContainer = () => {
             </Link>
 
             <Link to="/grises">
-                <Categories name = "Hoodies Grises" clic = {clic} />
+                <Categories name = "Hoodies Grises" onClick={setSelectedCategory}/>
             </Link>
 
             <Link to="/blancos">
-                <Categories name = "Hoodies Blancos" clic = {clic} />
+                <Categories name = "Hoodies Blancos" onClick={setSelectedCategory}/>
             </Link>
 
             <Link to="/negros">
-                <Categories name = "Hoodies Negros" clic = {clic} />
+                <Categories name = "Hoodies Negros" onClick={setSelectedCategory}/>
             </Link>
 
             <Link>
-                <CartWidget clic = {clic} />
+                <CartWidget/>
             </Link>
             
         </div>

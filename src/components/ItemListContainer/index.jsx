@@ -1,10 +1,12 @@
 import "./styles.css"
 import ItemList from "../ItemList"
+import { useEffect, useState } from "react";
 
-const ItemListContainer = () => {
+const ItemListContainer = (items) => {
+
     return(
         <div id = "ItemListContainer">
-            <ItemList/>
+            <ItemList items={items} />
         </div>
     )
 }
