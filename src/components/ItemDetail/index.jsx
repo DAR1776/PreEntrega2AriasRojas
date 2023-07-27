@@ -1,19 +1,37 @@
 import "./styles.css"
 import ItemCount from "../ItemCount"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ItemDetail () {
-    const [item,setItem] = useState(0)
+    const {id} = useParams()
+    console.log("id:", id)
+
+    const [item, setItem] = useState(null)
+
+    useEffect(() => {
+        fetch (`../../mocks/data.json`)
+        .then((response) => {
+            return response.json()
+          })
+        .then((data) => {
+            const selectedItem = data.find((item) => item.id == id);
+            setItem(selectedItem)
+            console.log(item)
+        })
+    }, [id])
+
+    const [itemCount,setItemCount] = useState(0)
 
     const increment = () => {
-        setItem(item + 1);
+        setItemCount(itemCount + 1);
     };
 
     const decrement = () => {
-        if (item === 0)
-            setItem(0);
+        if (itemCount === 0)
+            setItemCount(0);
         else
-            setItem(item-1)
+            setItemCount(itemCount-1)
     };
 
     return(
@@ -25,7 +43,7 @@ function ItemDetail () {
                 <p>Precio: 35$</p>
                 <div id= "itemCount">
                     <button onClick={increment}>+</button>
-                    <ItemCount item={item}/>
+                    <ItemCount item={itemCount}/>
                     <button onClick={decrement}>-</button>
                 </div>
             </div>
